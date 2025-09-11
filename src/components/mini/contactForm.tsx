@@ -28,19 +28,19 @@ export interface ContactFormProps {
   apiPath?: string // default '/api/telegram/contact'
 }
 
-const mockDefaults: ContactFormValues = {
-  name: 'Aarav Mehta',
-  phone: '+91 90000 00000',
-  email: 'aarav@example.com',
-  inquiry: 'I’d like a quote and a demo for bridal portfolio.',
-}
+// const mockDefaults: ContactFormValues = {
+//   name: 'Aarav Mehta',
+//   phone: '+91 90000 00000',
+//   email: 'aarav@example.com',
+//   inquiry: 'I’d like a quote and a demo for bridal portfolio.',
+// }
 
 export function ContactForm({ className, apiPath = '/api/telegram/contact' }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(FormSchema),
-    defaultValues: mockDefaults,
+    // defaultValues: mockDefaults,
     mode: 'onBlur',
   })
 
