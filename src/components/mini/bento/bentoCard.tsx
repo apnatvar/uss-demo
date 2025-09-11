@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
+import CountUp from '../../animations/CountUp'
 
 export interface DesktopMetric {
   title: string // e.g., "Trusted by"
@@ -32,7 +33,17 @@ export function DesktopMetricCard({ metric, className }: DesktopMetricCardProps)
         </CardHeader>
         <Separator className="my-1" />
         <CardContent className="pt-0">
-          <p className="text-xl md:text-4xl 2xl:text-5xl font-bold leading-tight">{metric.value}</p>
+          <p className="text-xl md:text-3xl 2xl:text-5xl font-bold leading-tight">
+            <CountUp
+              from={0}
+              to={100} //{metric.value}
+              separator=","
+              direction="up"
+              duration={1}
+              className="count-up-text"
+            />
+            %adj
+          </p>
           {metric.description ? (
             <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
               {metric.description}

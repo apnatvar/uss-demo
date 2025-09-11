@@ -3,8 +3,9 @@
 import * as React from 'react'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import { PositiveDisclaimer } from '../mini/featureDisclaimer'
-import { FeatureChips } from '../mini/featureList'
+import { PositiveDisclaimer } from '../mini/feature/featureDisclaimer'
+import { FeatureChips } from '../mini/feature/featureList'
+import { ShimmeringText } from '../animations/ShimmerText'
 
 export interface UnmatchedSectionProps {
   className?: string
@@ -40,7 +41,14 @@ export default function UnmatchedSection({
   features = mockFeatures,
 }: UnmatchedSectionProps) {
   return (
-    <section className={cn('w-full bg-background text-foreground min-h-[100dvh] overflow-hidden', 'py-8 sm:py-12', className)}>
+    <section
+      className={cn(
+        'w-full bg-background text-foreground min-h-[100dvh] overflow-hidden',
+        'py-8 sm:py-12',
+        className,
+      )}
+      id="experience"
+    >
       <article className="mx-auto w-full max-w-5xl px-4 sm:px-6">
         {/* Title + inline subtitle */}
         <header className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
@@ -51,7 +59,9 @@ export default function UnmatchedSection({
         <Separator className="my-4 sm:my-6" />
 
         {/* Long muted text */}
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{blurb}</p>
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <ShimmeringText text={blurb} />
+        </p>
 
         {/* Features for quick scanning */}
         <section className="mt-4 sm:mt-6" aria-labelledby="quick-features">

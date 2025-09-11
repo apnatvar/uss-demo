@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import { ProcessCarousel } from '../mini/processCarousel'
+import { ProcessCarousel } from '../mini/process/processCarousel'
 
 export interface HowItWorksProps {
   className?: string
@@ -13,11 +13,12 @@ export interface HowItWorksProps {
 
 export default function HowItWorks({
   className,
-  title = 'So how does it work',
+  title = 'So How Does it Work?',
   subtitle = 'Swipe right to see an approximate timeline of our process, from first getting in touch to final demo and delivery',
 }: HowItWorksProps) {
   return (
     <section
+      id="process"
       className={cn(
         'w-full bg-background text-foreground min-h-[100dvh] overflow-hidden',
         'py-8 sm:py-12',

@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import TrueFocus from '../animations/TrueFocus'
+import { ShimmeringText } from '../animations/ShimmerText'
 
 export interface HeroHeaderProps {
   className?: string
@@ -14,15 +16,13 @@ export interface HeroHeaderProps {
   secondaryCta?: { label: string; href: string }
 }
 
-const mockTitle = 'Built for modern parking.'
 const mockSubtitle =
-  'Security, automation, and compatibility—without ripping and replacing your existing cameras or workflows.'
-const mockPrimary = { label: 'See a demo', href: '/demo' }
-const mockSecondary = { label: 'Talk to us', href: '/contact' }
+  'Up-to-date Security and Automation services that easily integrate into your existing workflows.'
+const mockPrimary = { label: 'Schedule a Demo', href: '/demo' }
+const mockSecondary = { label: 'Get a Quote', href: '/contact' }
 
 export default function HeroHeader({
   className,
-  title = mockTitle,
   subtitle = mockSubtitle,
   primaryCta = mockPrimary,
   secondaryCta = mockSecondary,
@@ -35,9 +35,19 @@ export default function HeroHeader({
       <article className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-10 text-center">
         <header className="space-y-3">
           <h1 id="hero-title" className="text-3xl sm:text-4xl font-bold tracking-tight">
-            {title}
+            Built for
+            <TrueFocus
+              sentence="Modern Parking Solutions"
+              manualMode={false}
+              blurAmount={3}
+              borderColor="red"
+              animationDuration={1}
+              pauseBetweenAnimations={1}
+            />
           </h1>
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{subtitle}</p>
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <ShimmeringText text={subtitle} />
+          </p>
         </header>
 
         <Separator className="my-4 sm:my-6" />
