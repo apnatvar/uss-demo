@@ -47,7 +47,7 @@ export default function PillNav({
   activeHref,
   className = '',
   baseColor = '#ddd',
-  pillColor = '#111', //works only with this config rn because of line 98 bg-white
+  pillColor = '#111',
   hoveredPillTextColor = '#222',
   pillTextColor = baseColor,
   onMobileMenuClick,
@@ -55,6 +55,7 @@ export default function PillNav({
   const [open, setOpen] = React.useState(false)
   const cssVars = {
     // nav background + theming
+    // could just set the components to shadcn colours but I guess its better to have them different in case anyone wants a contrasting navpill.
     ['--nav-bg' as const]: baseColor,
     ['--pill-bg' as const]: pillColor,
     ['--pill-text' as const]: pillTextColor,
@@ -94,7 +95,7 @@ export default function PillNav({
                     className={cn(
                       'group relative inline-flex h-9 items-center justify-center rounded-full px-4 text-sm font-semibold uppercase tracking-[0.2px] transition-colors',
                       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring',
-                      'bg-black hover:bg-white',
+                      'bg-[var(--pill-bg)] hover:bg-[var(--nav-bg)]',
                     )}
                   >
                     {/* Label stack (hover reveal) */}
@@ -103,9 +104,8 @@ export default function PillNav({
                         {item.label}
                       </span>
                       <span
-                        className="pointer-events-none absolute left-0 top-0 block translate-y-[140%] transition-transform duration-200 group-hover:translate-y-0"
+                        className="pointer-events-none absolute left-0 text-[var(--pill-hover-text)] top-0 block translate-y-[140%] transition-transform duration-200 group-hover:translate-y-0 text"
                         aria-hidden="true"
-                        style={{ color: 'var(--pill-hover-text)' }}
                       >
                         {item.label}
                       </span>

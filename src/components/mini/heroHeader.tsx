@@ -34,8 +34,10 @@ export default function HeroHeader({
     >
       <article className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-10 text-center">
         <header className="space-y-3">
-          <h1 id="hero-title" className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Built for
+          <h1 id="hero-title" className="text-xl sm:text-2xl tracking-tight">
+            Maximising Security for your assets with
+          </h1>
+          <h1 id="hero-title" className="p-5 text-3xl sm:text-4xl font-bold tracking-tight">
             <TrueFocus
               sentence="Modern Parking Solutions"
               manualMode={false}
@@ -44,7 +46,7 @@ export default function HeroHeader({
               animationDuration={1}
               pauseBetweenAnimations={1}
             />
-          </h1>
+          </h1>{' '}
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
             <ShimmeringText text={subtitle} />
           </p>
