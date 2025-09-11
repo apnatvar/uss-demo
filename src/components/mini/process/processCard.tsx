@@ -9,7 +9,7 @@ import { ShimmeringText } from '../../animations/ShimmerText'
 export interface ProcessStep {
   step: number
   title: string
-  subtitle?: string // e.g. "expected timeline — 3 weeks"
+  subtitle: string // e.g. "expected timeline — 3 weeks"
   description: string
 }
 
@@ -22,7 +22,7 @@ export function ProcessStepCard({ data, className }: ProcessStepCardProps) {
   return (
     <Card className={cn('w-full h-full', `${className}`)}>
       <CardHeader className="pb-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <Badge variant="secondary" aria-label={`Step ${data.step}`}>
             Step {data.step}
           </Badge>
@@ -30,12 +30,11 @@ export function ProcessStepCard({ data, className }: ProcessStepCardProps) {
             {data.title}
           </CardTitle>
         </div>
-        {data.subtitle ? <CardDescription className="mt-1">{data.subtitle}</CardDescription> : null}
+        <CardDescription className="mt-1">{data.subtitle}</CardDescription>
       </CardHeader>
 
       <CardContent>
         <article>
-          {/* Keep things compact on md+; nothing else needed since header has the text */}
           <p className="sr-only">Summary</p>
         </article>
         <article className="w-full">

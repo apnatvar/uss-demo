@@ -4,7 +4,7 @@ import * as React from 'react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import CountUp from '../../animations/CountUp'
+import CountUp from '../../../animations/CountUp'
 
 export interface DesktopMetric {
   title: string // e.g., "Trusted by"

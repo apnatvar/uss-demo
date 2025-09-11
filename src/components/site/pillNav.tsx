@@ -14,6 +14,7 @@ import { Separator } from '@/components/ui/separator'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { cn } from '@/lib/utils'
+import { ThemeToggle } from '../mini/theme-trigger'
 
 export type PillNavItem = {
   label: string
@@ -158,6 +159,7 @@ export default function PillNav({
 
           <SheetContent side="top" className="rounded-b-3xl p-0">
             <SheetHeader className="px-4 pt-4">
+              <ThemeToggle />
               <SheetTitle className="text-base">Menu</SheetTitle>
             </SheetHeader>
 

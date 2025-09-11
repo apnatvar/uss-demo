@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import TrueFocus from '../animations/TrueFocus'
-import { ShimmeringText } from '../animations/ShimmerText'
+import TrueFocus from '../../animations/TrueFocus'
+import { ShimmeringText } from '../../animations/ShimmerText'
 
 export interface HeroHeaderProps {
   className?: string
@@ -32,7 +32,7 @@ export default function HeroHeader({
       className={cn('w-full bg-background text-foreground', className)}
       aria-labelledby="hero-title"
     >
-      <article className="mx-auto max-w-5xl px-4 sm:px-6 py-8 sm:py-10 text-center">
+      <article className="mx-auto max-w-5xl px-4 sm:px-6 py-18 sm:py-10 text-center">
         <header className="space-y-3">
           <h1 id="hero-title" className="text-xl sm:text-2xl tracking-tight">
             Maximising Security for your assets with

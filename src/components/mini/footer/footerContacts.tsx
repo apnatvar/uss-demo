@@ -4,15 +4,9 @@ import * as React from 'react'
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
-import {
-  Phone as PhoneIcon,
-  Mail as MailIcon,
-  MessageCircle as WhatsAppIcon,
-  Instagram as InstagramIcon,
-} from 'lucide-react'
 import { Card } from '@/components/ui/card'
-
-type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>
+import { FaEnvelope, FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa6'
+import { IconType } from 'react-icons'
 
 export type ContactItem = {
   label: string
@@ -27,24 +21,24 @@ export interface FooterContactsProps {
 }
 
 const mockContacts: ContactItem[] = [
-  { label: '+91 98765 43210', href: 'tel:+919876543210', ariaLabel: 'Call us', Icon: PhoneIcon },
+  { label: '+91 98765 43210', href: 'tel:+919876543210', ariaLabel: 'Call us', Icon: FaPhone },
   {
     label: 'WhatsApp',
     href: 'https://wa.me/919876543210',
     ariaLabel: 'Chat on WhatsApp',
-    Icon: WhatsAppIcon,
+    Icon: FaWhatsapp,
   },
   {
     label: 'hello@unisafe.example',
     href: 'mailto:hello@unisafe.example',
     ariaLabel: 'Email us',
-    Icon: MailIcon,
+    Icon: FaEnvelope,
   },
   {
     label: '@unisafesecurity',
     href: 'https://instagram.com/unisafesecurity',
     ariaLabel: 'Instagram',
-    Icon: InstagramIcon,
+    Icon: FaInstagram,
   },
 ]
 
@@ -53,7 +47,7 @@ export function FooterContacts({ items = mockContacts, className }: FooterContac
     <section className={cn('w-full', className)} aria-label="Contact links">
       <Card className="w-full">
         <nav aria-label="Contact methods">
-          <ul className="m-0 flex w-max list-none items-center gap-4 p-0 py-2 mx-auto">
+          <ul className="m-0 flex w-max list-none items-center gap-4 p-0 py-2 mx-auto flex-col md:flex-row">
             {items.map((item, i) => (
               <li key={`${item.label}-${i}`}>
                 <Link

@@ -35,7 +35,7 @@ export function ProcessCarousel({ steps = defaultSteps, className }: ProcessCaro
             <li
               key={s.step}
               // Each card occupies a sensible min width so X-scroll makes sense.
-              className="snap-start min-w-2/5 md:min-w-3/5"
+              className="snap-start min-w-[75%] md:min-w-3/5"
             >
               <ProcessStepCard data={s} />
             </li>
