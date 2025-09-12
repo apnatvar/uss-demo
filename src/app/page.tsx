@@ -1,5 +1,4 @@
 import PillNav from '@/components/site/pillNav'
-import { ThemeToggle } from '@/components/mini/theme-trigger'
 import UnmatchedSection from '@/components/site/features'
 import Footer from '@/components/site/footer'
 import GetInTouch from '@/components/site/getInTouch'

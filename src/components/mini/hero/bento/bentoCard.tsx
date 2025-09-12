@@ -8,7 +8,9 @@ import CountUp from '../../../animations/CountUp'
 
 export interface DesktopMetric {
   title: string // e.g., "Trusted by"
-  value: string // e.g., "4,500+"
+  valuePrefix?: string
+  value?: number // e.g., "4,500+"
+  valuePostfix?: string
   label?: string // e.g., "clients"
   description?: string // optional fine print
   gridClass: string // exact desktop grid placement (col/row spans + starts)
@@ -34,15 +36,18 @@ export function DesktopMetricCard({ metric, className }: DesktopMetricCardProps)
         <Separator className="my-1" />
         <CardContent className="pt-0">
           <p className="text-xl md:text-3xl 2xl:text-5xl font-bold leading-tight">
-            <CountUp
-              from={0}
-              to={100} //{metric.value}
-              separator=","
-              direction="up"
-              duration={1}
-              className="count-up-text"
-            />
-            %adj
+            {metric.valuePrefix}
+            {metric.value && (
+              <CountUp
+                from={0}
+                to={metric.value}
+                separator=","
+                direction="up"
+                duration={1}
+                className="count-up-text"
+              />
+            )}
+            {metric.valuePostfix}
           </p>
           {metric.description ? (
             <p className="text-xs text-muted-foreground mt-1 leading-relaxed">

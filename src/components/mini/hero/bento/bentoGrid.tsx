@@ -68,25 +68,29 @@ const defaultMetrics: DesktopMetric[] = [
   // Top row band (rows 1–2)
   {
     title: 'Trusted by',
-    value: '4,500+',
+    value: 450,
+    valuePostfix: '+',
     label: 'clients worldwide',
     gridClass: 'col-start-1 col-span-3 row-start-1 row-span-2',
   },
   {
     title: 'Cities',
-    value: '120+',
+    value: 120,
+    valuePostfix: '+',
     label: 'active deployments',
     gridClass: 'col-start-4 col-span-3 row-start-1 row-span-2',
   },
   {
     title: 'Cameras supported',
-    value: '1,200+',
+    value: 1200,
+    valuePostfix: '+',
     label: 'models & SKUs',
     gridClass: 'col-start-7 col-span-3 row-start-1 row-span-2',
   },
   {
     title: 'Integrations',
-    value: '35+',
+    value: 35,
+    valuePostfix: '+',
     label: 'parking & security',
     gridClass: 'col-start-10 col-span-3 row-start-1 row-span-2',
   },
@@ -94,13 +98,15 @@ const defaultMetrics: DesktopMetric[] = [
   // Mid band left (rows 3–6, columns 1–4)
   {
     title: 'Avg deployment',
-    value: '14 days',
+    value: 14,
+    valuePostfix: ' days',
     label: 'site go-live',
     gridClass: 'col-start-1 col-span-4 row-start-3 row-span-2',
   },
   {
     title: 'Plate accuracy',
-    value: '98.7%',
+    value: 98.7,
+    valuePostfix: '%',
     label: 'field-measured',
     gridClass: 'col-start-1 col-span-4 row-start-5 row-span-2',
   },
@@ -108,13 +114,16 @@ const defaultMetrics: DesktopMetric[] = [
   // Mid band right (rows 3–6, columns 9–12)
   {
     title: 'SLA uptime',
-    value: '99.95%',
+    value: 99.95,
+    valuePostfix: '%',
     label: 'contracted',
     gridClass: 'col-start-9 col-span-4 row-start-3 row-span-2',
   },
   {
     title: 'Cost savings',
-    value: '30–45%',
+    valuePrefix: 'Avg: ',
+    value: 38,
+    valuePostfix: '%',
     label: 'vs rip-and-replace',
     gridClass: 'col-start-9 col-span-4 row-start-5 row-span-2',
   },
@@ -122,25 +131,28 @@ const defaultMetrics: DesktopMetric[] = [
   // Bottom row band (rows 7–8)
   {
     title: 'Daily events',
-    value: '12M+',
+    value: 12,
+    valuePostfix: 'M+',
     label: 'processed securely',
     gridClass: 'col-start-1 col-span-3 row-start-7 row-span-2',
   },
   {
     title: 'Latency',
-    value: '< 120ms',
+    valuePrefix: '<',
+    value: 120,
+    valuePostfix: 'ms',
     label: 'edge-to-cloud',
     gridClass: 'col-start-4 col-span-3 row-start-7 row-span-2',
   },
   {
     title: 'NPS',
-    value: '72',
+    value: 72,
     label: 'customer satisfaction',
     gridClass: 'col-start-7 col-span-3 row-start-7 row-span-2',
   },
   {
     title: 'Audit & RBAC',
-    value: 'Built-in',
+    valuePrefix: 'Built-in',
     label: 'enterprise controls',
     gridClass: 'col-start-10 col-span-3 row-start-7 row-span-2',
   },
