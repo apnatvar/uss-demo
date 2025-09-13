@@ -19,7 +19,7 @@ export function FooterAssurance({
       className={cn('w-[95%] mx-auto bg-muted text-muted-foreground rounded-4xl', 'py-6 sm:py-8')}
     >
       <article className={cn('mx-auto w-full max-w-6xl px-4 sm:px-6', className)}>
-        <p className="text-sm sm:text-base leading-relaxed">{message}</p>
+        <p className="text-sm sm:text-base leading-relaxed text-justify">{message}</p>
       </article>
     </section>
   )

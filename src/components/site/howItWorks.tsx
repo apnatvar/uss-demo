@@ -32,7 +32,9 @@ export default function HowItWorks({
             {title}
           </h2>
           <Separator className="my-3 sm:my-4" />
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{subtitle}</p>
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-justify">
+            {subtitle}
+          </p>
         </header>
 
         <ProcessCarousel className="mt-5 sm:mt-6" />

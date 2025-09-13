@@ -39,7 +39,7 @@ function ShimmeringText({
       {text?.split('')?.map((char, i) => (
         <motion.span
           key={i}
-          className="inline-block whitespace-pre [transform-style:preserve-3d]"
+          className="inline-block whitespace-pre [transform-style:preserve-3d] text-justify"
           initial={{
             ...(wave
               ? {

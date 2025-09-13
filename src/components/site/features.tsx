@@ -5,7 +5,6 @@ import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 import { PositiveDisclaimer } from '../mini/feature/featureDisclaimer'
 import { FeatureChips } from '../mini/feature/featureList'
-import { ShimmeringText } from '../animations/ShimmerText'
 
 export interface UnmatchedSectionProps {
   className?: string
@@ -59,8 +58,8 @@ export default function UnmatchedSection({
         <Separator className="my-4 sm:my-6" />
 
         {/* Long muted text */}
-        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-          <ShimmeringText text={blurb} />
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-justify">
+          {blurb}
         </p>
 
         {/* Features for quick scanning */}

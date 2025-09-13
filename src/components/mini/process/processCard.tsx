@@ -4,7 +4,6 @@ import * as React from 'react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import { ShimmeringText } from '../../animations/ShimmerText'
 
 export interface ProcessStep {
   step: number
@@ -38,8 +37,8 @@ export function ProcessStepCard({ data, className }: ProcessStepCardProps) {
           <p className="sr-only">Summary</p>
         </article>
         <article className="w-full">
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            <ShimmeringText text={data.description} />
+          <p className="text-sm text-muted-foreground leading-relaxed text-justify">
+            {data.description}
           </p>
         </article>
       </CardContent>

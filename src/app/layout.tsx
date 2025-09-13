@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           enableSystem
           disableTransitionOnChange
         >
-          <main className="mx-auto px-3 py-4">{children}</main>
+          <main className="mx-auto px-3 py-4 text-justify">{children}</main>
         </ThemeProvider>
       </body>
     </html>
